@@ -12,7 +12,9 @@ const Circle = require('./lib/circle');
 const Rectangle = require('./lib/rectangle');
 const Triangle = require('./lib/triangle');
 const helpers = require('./lib/helpers');
-const { log } = require('util');
+
+// import write file function
+const writeToFile = require('./lib/writefile');
 
 // log design questions for users
 const logoQuestions = [
@@ -70,13 +72,13 @@ const logoQuestions = [
     // color of shape
     {
         type: 'input',
-        message: 'What color do you want the shape',
+        message: 'What color do you want the shape (Color Keyword or Hexadecimal Number):',
         name: 'shapeColor',
         transformer: (input) => {
           return input.toLowerCase();
         },
         validate(answer) {
-            return hf.validateColor(answer) ? true : 'You have entered an invalid Color Keyword or Hexidimal Number '
+            return hf.validateColor(answer) ? true : 'You have entered an invalid Color Keyword or Hexadecimal Number '
         } 
     },
   ];
@@ -87,13 +89,14 @@ const logoQuestions = [
     console.log(programTitle);
     console.log(`The command line tool to quickly generate scalable .svg logos for web design.
       `);
+      let svgXML = ''
       // start questions for logo input    
       inquirer.prompt(logoQuestions).then((logoAnswers) => {
-        let svgXML = ''
+  
         switch(logoAnswers.shape) {
           case 'Circle':
             const newCircle = new Circle(150, 100, 90, logoAnswers.shapeColor).render()
-            var logo = helpers.svgText(logoAnswers.logoText.toUpperCase(), logoAnswers.textColor);
+            var logo = helpers.svgText(logoAnswers.logoText.toUpperCase(), logoAnswers.textColor, logoAnswers.shape);
             svgXML = `
 ${newCircle}
 ${logo}
@@ -101,17 +104,23 @@ ${logo}
             break
           case 'Square':
             const newSquare = new Rectangle(60, 10, 180, 180, logoAnswers.shapeColor).render()
-            var logo = helpers.svgText(logoAnswers.logoText.toUpperCase(), logoAnswers.textColor);
+            var logo = helpers.svgText(logoAnswers.logoText.toUpperCase(), logoAnswers.textColor, logoAnswers.shape);
             svgXML = `
 ${newSquare}
 ${logo}
             `
-            console.log(svgXML);
             break
           case 'Triangle':
-            console.log('Triangle')
-            //const newCircle = new Circle()
-        }    
+            const newTriangle = new Triangle(150, 10, 254, 190, 46, 190, logoAnswers.shapeColor).render()
+            var logo = helpers.svgText(logoAnswers.logoText.toUpperCase(), logoAnswers.textColor, logoAnswers.shape);
+            svgXML = `
+${newTriangle}
+${logo}
+            `
+            break
+        }
+      }).then(() => {
+        writeToFile(svgXML)  
       }).catch(console.log.bind(console));;
   }
   
