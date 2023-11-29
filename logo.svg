@@ -4,8 +4,8 @@
      xmlns="http://www.w3.org/2000/svg">
 
 
-<circle cx="150" cy="100" r="90" fill="yellow"/>
-<text x="150" y="125" font-size="75" text-anchor="middle" fill="Green">BOB</text>
+<polygon points="150, 10 254, 190 46, 190" fill="#CE8272"/>
+<text x="150" y="150" font-size="50" text-anchor="middle" fill="Yellow">SUS</text>
             
 
 </svg>
