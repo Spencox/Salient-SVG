@@ -3,21 +3,7 @@
 ## Description
 
 
-Provide a short description explaining the what, why, and how of your project. 
-Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributions](#contributions)
-- [Tests](#tests)
-- [Features](#features)
-- [Badges](#badges)
-- [Credits](#credits)
+This program is a command-line tool designed to swiftly generate scalable SVG logos for web design. Motivated by the need for a more efficient and accessible logo creation process, the project goes beyond mere practicality, aiming to empower developers and designers with a user-friendly, lightweight solution. By eliminating the complexities associated with traditional design software, salient_svg addresses the challenge of quick logo generation directly from the command line. The development journey enriched our understanding of command-line interfaces, SVG generation, and user input handling, emphasizing the importance of creating tools that are both simple and powerful. The tool incorporates a visually engaging ASCII art on startup, enhancing the overall user experience. A typical usage example involves entering characters, selecting colors for text and shape, and receiving the generated logo.svg file. 
 
 ## Installation
 Clone the repository with git clone https://github.com/Spencox/Salient-SVG.git, navigate to the project directory using cd Salient-SVG, install dependencies with npm install, run the program with node index.js or npm start, answer the prompts to provide shape and logo information, the .svg logo will be written to the project directory. 
@@ -28,20 +14,31 @@ Location in Github Repository:
 
 https://github.com/Spencox/Universal-Code-Quiz.git
 
-[![Alt Text](thumbnail_image_path)](video_file_path)
+Video:
 
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+[Program Demonstration](https://drive.google.com/file/d/1dm9m3qJokdRwUjbhBjvhUIOI12P0hdqa/view?usp=drive_link)
+
+Very straight forward command line use with error checking. Ex. 
+
+```
+$ npm start
+
+? Enter three characters for logo: FUN
+? What color do you want the text (Color Keyword or Hexadecimal Number): blue
+? Select shape for logo: Circle
+? What color do you want the shape (Color Keyword or Hexadecimal Number): red
+
+Generated logo.svg
+```
+A ready to go SVG called logo.svg is generated in main file directory.
 
 ## Examples
 
 ![Logo Example 1](examples/logo_circle.svg) ![Logo Example 2](examples/logo_triangle.svg) ![Logo Example 3](examples/logo_square.svg)
 
 ## Tests
-There is a 
+There is a 4 suites of tests for this program. There are 20 tests using jest.js that will test class creation of the Shape, Circle, Triangle, and Rectangle classes. To run test use the command `npm test`
 
-## Features
-If your project has a lot of features, list them here.
 
 ## Credits
 
