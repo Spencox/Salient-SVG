@@ -53,10 +53,10 @@ const logoQuestions = [
         choices: [
           new inquirer.Separator(' = Basic Shapes = '),
           {
-            name: 'Circle'
+            name: 'Triangle'
           },
           {
-            name: 'Triangle'
+            name: 'Circle'
           },
           {
             name: 'Square'
@@ -85,7 +85,12 @@ const logoQuestions = [
 
   // start log questions
   function init() {
-    const programTitle = `Salient SVG`;
+    const programTitle = 
+`
+░█▀▀░█▀█░█░░░▀█▀░█▀▀░█▀█░▀█▀░░░░░█▀▀░█░█░█▀▀
+░▀▀█░█▀█░█░░░░█░░█▀▀░█░█░░█░░▄▄▄░▀▀█░▀▄▀░█░█
+░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░▀░░░░░░▀▀▀░░▀░░▀▀▀
+`;
     console.log(programTitle);
     console.log(`The command line tool to quickly generate scalable .svg logos for web design.
       `);
