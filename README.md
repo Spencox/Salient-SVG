@@ -12,7 +12,7 @@ Clone the repository with git clone https://github.com/Spencox/Salient-SVG.git, 
 
 Location in Github Repository:
 
-https://github.com/Spencox/Universal-Code-Quiz.git
+[https://github.com/Spencox/Salient-SVG.git](https://github.com/Spencox/Salient-SVG)
 
 Video:
 
